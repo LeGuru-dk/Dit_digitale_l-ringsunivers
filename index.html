@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Forside til Mit Digitale Spilunivers">
+  <title>Mit Digitale Spilunivers</title>
+  <style>
+    :root {
+      --navy:#173b67; --blue:#2563a6; --sky:#eaf4ff; --ink:#172033;
+      --muted:#536176; --white:#fff; --gold:#f5b942; --line:#dbe5f0;
+      --green:#16856b; --purple:#6957b8; --red:#b74949;
+      --shadow:0 10px 28px rgba(23,59,103,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#f6f9fc;color:var(--ink);font-family:Arial,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#102c50 0%,#1f5e9f 58%,#3d83c4 100%);color:#fff;padding:72px 24px 64px;text-align:center}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.08)}
+    .hero:before{width:330px;height:330px;left:-130px;top:-150px}.hero:after{width:260px;height:260px;right:-80px;bottom:-140px}
+    .hero-inner{position:relative;z-index:1;max-width:980px;margin:auto}
+    .eyebrow{display:inline-block;margin-bottom:14px;padding:7px 14px;border:1px solid rgba(255,255,255,.32);border-radius:999px;background:rgba(255,255,255,.10);font-size:.9rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    h1{margin:0;font-size:clamp(2.35rem,6vw,4.6rem);line-height:1.04;letter-spacing:-.035em}
+    .lead{max-width:760px;margin:22px auto 0;font-size:clamp(1.06rem,2.1vw,1.3rem);color:#eef7ff}
+    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border-radius:11px;text-decoration:none;font-weight:800;transition:.18s ease}
+    .button.primary{background:var(--gold);color:#1f2937;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+    .button.secondary{border:1px solid rgba(255,255,255,.50);background:rgba(255,255,255,.10);color:#fff}
+    .button:hover,.button:focus-visible{transform:translateY(-2px)}
+    main{max-width:1180px;margin:auto;padding:54px 22px 70px}
+    .section-heading{text-align:center;max-width:760px;margin:0 auto 30px}
+    .section-heading h2{margin:0 0 8px;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--navy)}
+    .section-heading p{margin:0;color:var(--muted);font-size:1.05rem}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .card{display:flex;flex-direction:column;min-height:285px;padding:26px;border:1px solid var(--line);border-top:5px solid var(--accent);border-radius:18px;background:var(--white);box-shadow:var(--shadow);transition:.2s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(23,59,103,.17)}
+    .icon{display:grid;place-items:center;width:55px;height:55px;border-radius:15px;background:color-mix(in srgb,var(--accent) 14%,white);font-size:1.8rem}
+    .card h3{margin:18px 0 8px;font-size:1.3rem;color:var(--navy)}
+    .card p{margin:0 0 20px;color:var(--muted)}
+    .card ul{margin:0 0 22px;padding-left:20px;color:#35445a}
+    .card-link{margin-top:auto;display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:800;text-decoration:none}
+    .card-link:after{content:"→"}.card-link:hover{text-decoration:underline}
+    .journey{margin-top:62px;padding:38px;border-radius:24px;background:linear-gradient(135deg,#e8f3ff,#f7fbff);border:1px solid #cfe2f5}
+    .journey h2{text-align:center;color:var(--navy);margin:0 0 8px;font-size:2rem}
+    .journey-intro{text-align:center;color:var(--muted);margin:0 auto 28px;max-width:700px}
+    .steps{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:start}
+    .step{text-align:center;position:relative}
+    .step:not(:last-child):after{content:"";position:absolute;top:22px;left:64%;width:74%;height:3px;background:#a7c9e8}
+    .step-number{position:relative;z-index:1;display:grid;place-items:center;width:46px;height:46px;margin:0 auto 10px;border-radius:50%;background:var(--blue);color:#fff;font-weight:900;box-shadow:0 5px 12px rgba(37,99,166,.25)}
+    .step strong{display:block;color:var(--navy);font-size:.92rem;line-height:1.25}
+    .featured{margin-top:62px}
+    .featured-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .feature{padding:28px;border-radius:18px;color:#fff;box-shadow:var(--shadow)}
+    .feature:nth-child(1){background:linear-gradient(135deg,#14745f,#20a17e)}
+    .feature:nth-child(2){background:linear-gradient(135deg,#513f9b,#7764cf)}
+    .feature:nth-child(3){background:linear-gradient(135deg,#944040,#c65b5b)}
+    .feature h3{margin:10px 0 8px;font-size:1.35rem}.feature p{margin:0 0 18px;color:#f7fbff}
+    .feature a{font-weight:900;text-decoration:none;border-bottom:2px solid rgba(255,255,255,.55)}
+    .note{margin-top:50px;padding:22px 24px;border-left:5px solid var(--gold);border-radius:10px;background:#fff8e6;color:#4b3a12}
+    footer{text-align:center;padding:25px;color:#67758a;font-size:.92rem}
+    @media (max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(4,1fr);row-gap:24px}.step:after{display:none}.featured-grid{grid-template-columns:1fr}}
+    @media (max-width:620px){.hero{padding:54px 18px 48px}.cards{grid-template-columns:1fr}.journey{padding:28px 18px}.steps{grid-template-columns:repeat(2,1fr)}main{padding-left:15px;padding-right:15px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.card{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">FVU-Digital</div>
+      <h1>Mit Digitale Spilunivers</h1>
+      <p class="lead">Lær digitale færdigheder gennem spil, simuleringer, øvelser og vejledninger. Vælg et område, og arbejd i dit eget tempo.</p>
+      <div class="actions">
+        <a class="button primary" href="#områder">Start din digitale rejse</a>
+        <a class="button secondary" href="#læringsrejse">Se læringsrejsen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="områder" aria-labelledby="områder-titel">
+      <div class="section-heading">
+        <h2 id="områder-titel">Vælg dit område</h2>
+        <p>Start med det emne, du har brug for, eller følg læringsrejsen længere nede på siden.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card" style="--accent:#2563a6">
+          <div class="icon" aria-hidden="true">🖥️</div><h3>Kom godt i gang</h3>
+          <p>Bliv fortrolig med computeren og de vigtigste redskaber.</p>
+          <ul><li>Lær computeren at kende</li><li>Tastatur og mus</li><li>Træning på MacBook</li></ul>
+          <a class="card-link" target="_top" href="https://sites.google.com/view/mitdigitalespilunivers/l%C3%A6r-din-computer-at-kende">Åbn området</a>
+        </article>
+
+        <article class="card" style="--accent:#16856b">
+          <div class="icon" aria-hidden="true">✉️</div><h3>Kommunikation</h3>
+          <p>Arbejd sikkert og sikkert med digitale beskeder og tjenester.</p>
+          <ul><li>Mail og kommunikation</li><li>Vejledning til e-Boks</li><li>Chatbot</li></ul>
+          <a class="card-link" target="_top" href="https://sites.google.com/view/mitdigitalespilunivers/kommunikation-med-mails">Åbn området</a>
+        </article>
+
+        <article class="card" style="--accent:#367fb8">
+          <div class="icon" aria-hidden="true">☁️</div><h3>Filer og skyen</h3>
+          <p>Forstå, hvor filer gemmes, og hvordan de flyttes og deles.</p>
+          <ul><li>Skyen</li><li>Google Drev og Fotos</li><li>Upload af filer</li></ul>
+          <a class="card-link" target="_top" href="https://sites.google.com/view/mitdigitalespilunivers/skyen">Åbn området</a>
+        </article>
+
+        <article class="card" style="--accent:#b74949">
+          <div class="icon" aria-hidden="true">🛡️</div><h3>Sikkerhed</h3>
+          <p>Træn sikker adfærd og bliv bedre til at vurdere digitale oplysninger.</p>
+          <ul><li>Digital sikkerhed</li><li>Fake News</li><li>Netbank</li></ul>
+          <a class="card-link" target="_top" href="https://sites.google.com/view/mitdigitalespilunivers/sikkerhed">Åbn området</a>
+        </article>
+
+        <article class="card" style="--accent:#6957b8">
+          <div class="icon" aria-hidden="true">🤖</div><h3>Kunstig intelligens</h3>
+          <p>Undersøg chatbots, og prøv at skabe digitale aktiviteter med AI.</p>
+          <ul><li>Spørg en chatbot</li><li>Lav et spil med AI</li><li>Arbejd kritisk med svar</li></ul>
+          <a class="card-link" target="_top" href="https://sites.google.com/view/mitdigitalespilunivers/chatbot">Åbn området</a>
+        </article>
+
+        <article class="card" style="--accent:#c47a12">
+          <div class="icon" aria-hidden="true">🎮</div><h3>Opgaver og spil</h3>
+          <p>Brug dine færdigheder i praktiske øvelser og digitale udfordringer.</p>
+          <ul><li>Kursistspil</li><li>Blandede opgaver</li><li>Sikkerhedsspil</li></ul>
+          <a class="card-link" target="_top" href="https://sites.google.com/view/mitdigitalespilunivers/kursistspil">Åbn området</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="journey" id="læringsrejse" aria-labelledby="rejse-titel">
+      <h2 id="rejse-titel">Din digitale læringsrejse</h2>
+      <p class="journey-intro">Er du i tvivl om, hvor du skal begynde? Følg trinene fra venstre mod højre.</p>
+      <div class="steps">
+        <div class="step"><div class="step-number">1</div><strong>Computer</strong></div>
+        <div class="step"><div class="step-number">2</div><strong>Tastatur og mus</strong></div>
+        <div class="step"><div class="step-number">3</div><strong>e-Boks</strong></div>
+        <div class="step"><div class="step-number">4</div><strong>Mail</strong></div>
+        <div class="step"><div class="step-number">5</div><strong>Filer og skyen</strong></div>
+        <div class="step"><div class="step-number">6</div><strong>Sikkerhed</strong></div>
+        <div class="step"><div class="step-number">7</div><strong>AI og chatbots</strong></div>
+      </div>
+    </section>
+
+    <section class="featured" aria-labelledby="populære-titel">
+      <div class="section-heading"><h2 id="populære-titel">Prøv en aktivitet</h2><p>Tre steder, hvor du kan komme hurtigt i gang med praktisk træning.</p></div>
+      <div class="featured-grid">
+        <article class="feature"><div aria-hidden="true">💳</div><h3>Netbank</h3><p>Prøv en ufarlig øvelse med digitale bankfunktioner.</p><a target="_top" href="https://sites.google.com/view/mitdigitalespilunivers/netbank">Start aktiviteten</a></article>
+        <article class="feature"><div aria-hidden="true">🤖</div><h3>Chatbot</h3><p>Stil spørgsmål om IT, og undersøg svarene.</p><a target="_top" href="https://sites.google.com/view/mitdigitalespilunivers/chatbot">Åbn chatbotten</a></article>
+        <article class="feature"><div aria-hidden="true">⌨️</div><h3>Tastatur og mus</h3><p>Træn taster, genveje, skrivehastighed og digital opmærksomhed.</p><a target="_top" href="https://sites.google.com/view/mitdigitalespilunivers/tr%C3%A6ning-af-tastatur-og-mus">Start træningen</a></article>
+      </div>
+    </section>
+
+    <aside class="note"><strong>Et godt sted at starte:</strong> Er du ny i det digitale, så begynd med “Kom godt i gang”. Har du allerede erfaring, kan du vælge det område, der passer til dit aktuelle behov.</aside>
+  </main>
+
+  <footer>Mit Digitale Spilunivers · FVU-Digital</footer>
+</body>
+</html>
